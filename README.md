@@ -32,7 +32,13 @@ This script is designed to integrate with CSV files, adding new columns that rep
 
 ### `main.py`
 
-The main driver script that orchestrates the feature extraction process, utilizing a graphical interface for file selection and managing the overall workflow.
+The main driver script preforms feature extraction process. This verion is for Linux, manual csv path entry.
+
+- **Description**: Coordinates the feature extraction process, allowing users to select a CSV file and automatically applying all available feature extractions.
+
+### `main_win.py`
+
+The main driver script preforms feature extraction process. This verion is for Windows, UI csv selection.
 
 - **Description**: Coordinates the feature extraction process, allowing users to select a CSV file and automatically applying all available feature extractions.
 
