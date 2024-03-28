@@ -9,11 +9,8 @@ class Confidence:
          
         self.insecure_words = [
             "maybe", "possibly", "could", "might", "perhaps",
-            "probably", "may", "suppose", "assume", "presume",
-            "guess", "suspect", "believe", "think", "ought",
-            "can", "should", "hope", "wish",
-            "doubt", "question", "uncertain", "unsure", "unlikely",
-            "risk", "chance", "fear", "worry", "concern"
+            "probably", "may", "suppose", "assume", "presume", "can", "believe", "think", "ought"
+  
         ]
 
     def get(self, text):
