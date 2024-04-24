@@ -1,14 +1,12 @@
 import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize
 
-nltk.download('punkt')
-
 class Confidence:
     def __init__(self):
         self.name = "Confidence"
          
         self.insecure_words = [
-            "maybe", "possibly", "could", "might", "perhaps",
+            "maybe", "possibly", "could", "might", "perhaps", "suggests",
             "probably", "may", "suppose", "assume", "presume", "can", "believe", "think", "ought"
   
         ]
