@@ -1,12 +1,23 @@
 import os
 import importlib.util
 from tqdm import tqdm
-
-from add_feature import AddFeature
+import tkinter as tk
+from tkinter import filedialog
+from add_feature import AddFeature 
+import string
+import pandas as pd
+import numpy as np
+from sklearn import feature_extraction, pipeline, metrics
+from sklearn.ensemble import RandomForestClassifier
+import pickle
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 
 def select_csv_file():
 
     return "/s/bach/g/under/rollo/cs345/semester_project/final_train.csv"
+
 
 def get_features():
     features = []
@@ -41,25 +52,23 @@ def get_features():
 
     return features
 
-
 def main():
     csv_path = select_csv_file()
-    add_feature = AddFeature(csv_path)
     features = get_features()
+    add_feature = AddFeature(csv_path)
     with open(csv_path, 'r', encoding='utf-8') as file:
-        total_lines = sum(1 for line in file) - 1 
+        total_lines = sum(1 for line in file) - 1  
 
     total_progress = len(features) * total_lines
 
     with tqdm(total=total_progress, desc="Total Progress", unit="line") as progress_bar:
         for feature in features:
             os.system('cls' if os.name == 'nt' else 'clear')
-            add_feature.add(feature, feature.name, progress_bar)
-
+            print(f"Processing feature: {feature.name}")
+            add_feature.add(feature, feature.name)
+            progress_bar.update(total_lines)  
+    
 
 
 if __name__ == "__main__":
     main()
-
-
-
